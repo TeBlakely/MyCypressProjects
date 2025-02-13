@@ -12,11 +12,14 @@ describe ('Register', () => {
           .type('teka.feques@gmail.com')
         
         cy.get('#password')
-         .type('1234')
+         .type('123456')
 
         cy.get('#btnRegister')
          .click()
 
+         .wait(3000)
+        cy.get('.swal2-confirm')
+          .click()
 
 })
 

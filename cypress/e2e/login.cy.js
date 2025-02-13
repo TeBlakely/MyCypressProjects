@@ -8,15 +8,21 @@ describe ('Login', () => {
           .type ('teka.feques@gmail.com')
 
         cy.get('#password')  
-          .type ('1234')
+          .type ('123456')
 
 
         cy.get('#btnLogin')
           .click()
-
-          cy.get('.remember_area input[type="checkbox"]') 
-          .check()  // Ensure checkbox is checked
+;
+        cy.get('#materialUnchecked', { timeout: 5000 })  
+          .should('exist')
+          .check()
           .should('be.checked');
+
+
+       
         
+          cy.get('.swal2-confirm')
+          .click()
     })
     })
