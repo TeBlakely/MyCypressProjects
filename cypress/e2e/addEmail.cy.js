@@ -15,6 +15,7 @@ describe ('Adicionar Email', () => {
           //cy.get('.al2-confirm')
           // .click()
           
+          //Douglas test
 
            cy.get('#swal2-title')
      
