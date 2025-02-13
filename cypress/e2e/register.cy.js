@@ -2,8 +2,8 @@ describe ('Register', () => {
 
     it ('Fill the form', () => {
         cy.visit('https://automationpratice.com.br/register')
-          cy.get('#top_header') 
-        
+          
+        cy.get('#top_header')         
         
         cy.get('#user')
           .type('Terena Blakely')
@@ -16,11 +16,12 @@ describe ('Register', () => {
 
         cy.get('#btnRegister')
          .click()
-
          .wait(3000)
-        cy.get('.swal2-confirm')
-          .click()
 
-})
-
+        
+       // Switch context to new page and click the confirmation popup
+        cy.origin('https://automationpratice.com.br/my-account', () => {
+          cy.get('.swal2-confirm').click()
+        })
+    })
 })
