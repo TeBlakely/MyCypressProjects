@@ -1,0 +1,23 @@
+describe ('Register', () => {
+
+    it ('Fill the form', () => {
+        cy.visit('https://automationpratice.com.br/register')
+          cy.get('#top_header') 
+        
+        
+        cy.get('#user')
+          .type('Terena Blakely')
+        
+        cy.get('#email')
+          .type('teka.feques@gmail.com')
+        
+        cy.get('#password')
+         .type('1234')
+
+        cy.get('#btnRegister')
+         .click()
+
+
+})
+
+})
